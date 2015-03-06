@@ -1,8 +1,8 @@
 angular.module('waitCalc',[])
 	.controller('mealCtrl',['$scope',function($scope){
-		$scope.baseMeal = 0.00;
-		$scope.taxRate = 0.00;
-		$scope.tipPerct = 0.00;
+		$scope.baseMeal = "";
+		$scope.taxRate = "";
+		$scope.tipPerct = "";
 		$scope.subTotal = 0.00;
 		$scope.tipAmt = 0.00;
 		$scope.totalCharge = 0.00;
@@ -21,15 +21,15 @@ angular.module('waitCalc',[])
 		}
 
 		$scope.cancelMeal = function(){
-			$scope.baseMeal = 0.00;
-			$scope.taxRate = 0.00;
-			$scope.tipPerct = 0.00;
+			$scope.baseMeal = "";
+			$scope.taxRate = "";
+			$scope.tipPerct = "";
 		}
 
 		$scope.resetMeal = function(){
-			$scope.baseMeal = 0.00;
-			$scope.taxRate = 0.00;
-			$scope.tipPerct = 0.00;
+			$scope.baseMeal = "";
+			$scope.taxRate = "";
+			$scope.tipPerct = "";
 			$scope.subTotal = 0.00;
 			$scope.tipAmt = 0.00;
 			$scope.totalCharge = 0.00;
