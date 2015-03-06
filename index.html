@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Waiter Earnings Calculator</title>
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
 <!-- Meal Details -->
@@ -33,8 +34,9 @@
 		<p>Tip Total: {{ totalTip | currency }}</p>
 		<p>Meal count: {{ mealCount | number }}</p>
 		<p>Average Tip Per Meal: {{ tipAverage | currency }}</p>
+		<button type="submit" id="rstBtn" ng-click="resetMeal()">Reset</button>
 	</section>
-	<button type="submit" ng-click="resetMeal()">Reset</button>
+	
 </section>
 	
 	<script src="angular.min.js"></script>

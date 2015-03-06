@@ -1,0 +1,15 @@
+h2 {
+	border: 1px solid black;
+	padding: 3px 2px;
+}
+
+.meal,
+.charges,
+.earnings {
+	border: 1px solid black;
+	border-radius: 10px;
+	margin: 15px;
+	padding: 0 5px 15px 5px;
+	width: 40%;
+	float: left;
+}
