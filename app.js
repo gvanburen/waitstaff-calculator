@@ -1,4 +1,21 @@
-angular.module('waitCalc',[])
+angular.module('waitCalc',['ngRoute'])
+	.config(['$routeProvider', function($routeProvider){
+		$routeProvider
+		.when('/',{
+			templateUrl : 'home.html'
+		})
+		.when('/meal',{
+			templateUrl : 'meal.html',
+			controller : 'mealCtrl'
+		})
+		.when('/earnings',{
+			templateUrl : 'earnings.html',
+			controller : 'mealCtrl'
+		})
+		.otherwise({
+			templateUrl : 'home.html'
+		})
+	}])
 	.controller('mealCtrl',['$scope',function($scope){
 		$scope.baseMeal = "";
 		$scope.taxRate = "";
@@ -38,4 +55,7 @@ angular.module('waitCalc',[])
 			$scope.tipAverage = 0.00;
 		}
 
-	}]);
+	}])
+	.controller('earningCtrl',['$scope', function($scope){
+		
+	}])

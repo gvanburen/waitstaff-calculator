@@ -1,0 +1,20 @@
+<section class="meal">
+	<form name="mealInfo" novalidate>
+	<h2>Enter the Meal Details</h2>
+	<p>Base Meal Price: $</p>
+	<input type="number" ng-model="baseMeal" placeholder="5.00" required>
+	<p>Tax Rate: </p>
+	<input type="number" ng-model="taxRate" placeholder="9.25" required> %
+	<p>Tip Percentage: </p>
+	<input type="number" ng-model="tipPerct" placeholder="5.00" required> %
+	<button type="submit" ng-disabled="mealInfo.$invalid" ng-click="calculate()">Submit</button>
+	<button type="submit" ng-click="cancelMeal()">Cancel</button>
+	</form>
+</section>
+<section class="charges">
+	<h2>Customer Charges</h2>
+	<p>Subtotal: {{ subTotal | currency }}</p>
+	<p>Tip: {{ tipAmt | currency }}</p>
+	<hr>
+	<p>Total: {{ totalCharge | currency }}</p>
+</section>

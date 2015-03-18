@@ -1,0 +1,7 @@
+<section class="earnings">
+	<h2>My Earnings Info</h2>
+	<p>Tip Total: {{ totalTip | currency }}</p>
+	<p>Meal count: {{ mealCount | number }}</p>
+	<p>Average Tip Per Meal: {{ tipAverage | currency }}</p>
+	<button type="submit" id="rstBtn" ng-click="resetMeal()">Reset</button>
+</section>

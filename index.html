@@ -6,40 +6,15 @@
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<!-- Meal Details -->
-<section class="container" ng-controller="mealCtrl">
 	<h1>Waitstaff Calculator</h1>
-	<section class="meal">
-		<form name="mealInfo" novalidate>
-		<h2>Enter the Meal Details</h2>
-		<p>Base Meal Price: $</p>
-		<input type="number" ng-model="baseMeal" placeholder="5.00" required>
-		<p>Tax Rate: </p>
-		<input type="number" ng-model="taxRate" placeholder="9.25" required> %
-		<p>Tip Percentage: </p>
-		<input type="number" ng-model="tipPerct" placeholder="5.00" required> %
-		<button type="submit" ng-disabled="mealInfo.$invalid" ng-click="calculate()">Submit</button>
-		<button type="submit" ng-click="cancelMeal()">Cancel</button>
-		</form>
-	</section>
-	<section class="charges">
-		<h2>Customer Charges</h2>
-		<p>Subtotal: {{ subTotal | currency }}</p>
-		<p>Tip: {{ tipAmt | currency }}</p>
-		<hr>
-		<p>Total: {{ totalCharge | currency }}</p>
-	</section>
-	<section class="earnings">
-		<h2>My Earnings Info</h2>
-		<p>Tip Total: {{ totalTip | currency }}</p>
-		<p>Meal count: {{ mealCount | number }}</p>
-		<p>Average Tip Per Meal: {{ tipAverage | currency }}</p>
-		<button type="submit" id="rstBtn" ng-click="resetMeal()">Reset</button>
-	</section>
-	
-</section>
-	
+	<a href="#/">Home</a>
+	<a href="#/meal">Meal</a>
+	<a href="#/earnings">Earnings</a>
+
+	<section class="container" ng-view></section>
+
 	<script src="angular.min.js"></script>
+	<script src="angular-route.min.js"></script>
 	<script src="app.js"></script>
 </body>
 </html>
