@@ -16,25 +16,26 @@ angular.module('waitCalc',['ngRoute'])
 			templateUrl : 'home.html'
 		})
 	}])
-	.controller('mealCtrl',['$scope',function($scope){
-		$scope.baseMeal = "";
-		$scope.taxRate = "";
-		$scope.tipPerct = "";
-		$scope.subTotal = 0.00;
-		$scope.tipAmt = 0.00;
-		$scope.totalCharge = 0.00;
-		$scope.totalTip = 0.00;
-		$scope.mealCount = 0;
-		$scope.tipAverage = 0.00;
-
+	.run(function($rootScope){
+		$rootScope.baseMeal = "";
+		$rootScope.taxRate = "";
+		$rootScope.tipPerct = "";
+		$rootScope.subTotal = 0.00;
+		$rootScope.tipAmt = 0.00;
+		$rootScope.totalCharge = 0.00;
+		$rootScope.totalTip = 0.00;
+		$rootScope.mealCount = 0;
+		$rootScope.tipAverage = 0.00;
+	})
+	.controller('mealCtrl',['$rootScope', '$scope', function($rootScope, $scope){
 		$scope.calculate = function(){
-			$scope.subTotal = ($scope.baseMeal * ($scope.taxRate/100 + 1));
-			$scope.tipAmt = ($scope.baseMeal * ($scope.taxRate/100));
-			$scope.totalCharge = ($scope.subTotal + $scope.tipAmt);	
+			$rootScope.subTotal = ($scope.baseMeal * ($scope.taxRate/100 + 1));
+			$rootScope.tipAmt = ($scope.baseMeal * ($scope.taxRate/100));
+			$rootScope.totalCharge = ($scope.subTotal + $scope.tipAmt);	
 
-			$scope.totalTip = $scope.totalTip + $scope.tipAmt; 
-			$scope.mealCount++;
-			$scope.tipAverage = $scope.totalTip/$scope.mealCount;
+			$rootScope.totalTip = $scope.totalTip + $scope.tipAmt; 
+			$rootScope.mealCount++;
+			$rootScope.tipAverage = $scope.totalTip/$scope.mealCount;
 		}
 
 		$scope.cancelMeal = function(){
@@ -44,18 +45,14 @@ angular.module('waitCalc',['ngRoute'])
 		}
 
 		$scope.resetMeal = function(){
-			$scope.baseMeal = "";
-			$scope.taxRate = "";
-			$scope.tipPerct = "";
-			$scope.subTotal = 0.00;
-			$scope.tipAmt = 0.00;
-			$scope.totalCharge = 0.00;
-			$scope.totalTip = 0.00;
-			$scope.mealCount = 0;
-			$scope.tipAverage = 0.00;
+			$rootScope.baseMeal = "";
+			$rootScope.taxRate = "";
+			$rootScope.tipPerct = "";
+			$rootScope.subTotal = 0.00;
+			$rootScope.tipAmt = 0.00;
+			$rootScope.totalCharge = 0.00;
+			$rootScope.totalTip = 0.00;
+			$rootScope.mealCount = 0;
+			$rootScope.tipAverage = 0.00;
 		}
-
-	}])
-	.controller('earningCtrl',['$scope', function($scope){
-		
 	}])
