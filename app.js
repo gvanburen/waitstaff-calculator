@@ -1,4 +1,4 @@
-angular.module('waitCalc',['ngRoute'])
+angular.module('waitCalc',['ngRoute', 'ngAnimate'])
 	.config(['$routeProvider', function($routeProvider){
 		$routeProvider
 		.when('/',{

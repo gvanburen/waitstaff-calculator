@@ -13,3 +13,17 @@ h2 {
 	width: 40%;
 	float: left;
 }
+
+.animate.ng-enter,
+.animate.ng-leave.ng-leave-active {
+	-webkit-transition: all ease-in-out 1.5s;
+  	transition: all ease-in-out 1.5s;
+  	margin-left: -9000px;
+  	opacity: 0;
+}
+
+.animate.ng-enter.ng-enter-active,
+.animate.ng-leave {
+	margin-left: 0;
+	opacity: 1;
+}
